@@ -1,4 +1,4 @@
-# Problem 3: UI Redesign Engagement (One-Sample Z-Test, Right-Tailed)
+# Problem: UI Redesign Engagement (One-Sample Z-Test, Right-Tailed)
 
 ## 📌 Problem Overview
 
