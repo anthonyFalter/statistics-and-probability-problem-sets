@@ -1,4 +1,4 @@
-# Problem 2: Machine Net Weight Check (One-Sample Z-Test, Two-Tailed)
+# Problem: Machine Net Weight Check (One-Sample Z-Test, Two-Tailed)
 
 ## 📌 Problem Overview
 
