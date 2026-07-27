@@ -2,12 +2,12 @@
 
 ## 📌 Problem Overview
 
-A system administrator is defining password requirements for an internal service. A temporary password must be exactly **$4$ characters** long, structured as follows:
+A system administrator is defining password requirements for an internal service. A temporary password must be exactly **4 characters** long, structured as follows:
 
-* **1st character:** A uppercase letter ($A\text{--}Z$, $26$ possibilities)
-* **2nd character:** A lowercase letter ($a\text{--}z$, $26$ possibilities)
-* **3rd character:** A digit ($0\text{--}9$, $10$ possibilities)
-* **4th character:** A special character ($!\, @\, \#\, \$\, \%\, \hat{}\, \&\, *$, $8$ possibilities)
+* **1st character:** An uppercase letter (A–Z, 26 possibilities)
+* **2nd character:** A lowercase letter (a–z, 26 possibilities)
+* **3rd character:** A digit (0–9, 10 possibilities)
+* **4th character:** A special character (!, @, #, $, %, ^, &, *, 8 possibilities)
 
 * **Objective:** Determine the total number of unique valid passwords that can be generated under this rule.
 
@@ -40,6 +40,6 @@ $$N = 676 \times 80 = 54,080$$
 
 ### 📝 Step 3: Final Conclusion
 
-* **Result:** There are **$54,080$** unique temporary passwords that can be generated using this format.
+* **Result:** There are **54,080** unique temporary passwords that can be generated using this format.
 
 </details>
