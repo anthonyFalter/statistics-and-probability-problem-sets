@@ -1,6 +1,6 @@
 # 🎲 Introduction to Probability Reference Guide
 
-A fundamental cheat sheet covering core probability principles, key terms, set operations, rules of probability, and common theoretical distributions.
+A fundamental cheat sheet covering core probability principles, key terms, set operations, rules of probability, theoretical distributions, and Bayesian reasoning.
 
 ---
 
@@ -64,91 +64,13 @@ $$P(A \cap B) = P(A) \cdot P(B \mid A)$$
 * **Conditional Probability ($P(A \mid B)$):** The updated probability of event $A$ occurring, given the known condition that event $B$ has already occurred.
 $$P(A \mid B) = \frac{P(A \cap B)}{P(B)} \quad \text{where } P(B) > 0$$
 
----
-
-### 5. Law of Total Probability & Bayes' Theorem
-* **Partition:** Dividing a sample space into mutually exclusive subsets $B_1, B_2, \dots$ that together cover the entire sample space.
-* **Prior Probability ($P(B)$):** The original estimate of an event's probability before observing new evidence.
-* **Posterior Probability ($P(B \mid A)$):** The updated probability of an event after accounting for new evidence $A$.
-
-* **Law of Total Probability:**
-  $$P(A) = \sum_{i=1}^{k} P(A \mid B_i) \cdot P(B_i)$$
-
-* **Bayes' Theorem:**
-  $$P(B_i \mid A) = \frac{P(A \mid B_i) \cdot P(B_i)}{\sum P(A \mid B_j) \cdot P(B_j)}$$
-
 </details>
 
 ---
 
-## 🎯 4. Counting Principles (Combinatorics)
-
-<details>
-<summary>👁️ <b>Click to reveal Permutations & Combinations Definitions</b></summary>
-
-<br>
-
-Used to count possible outcomes when calculating classical probabilities ($P(A) = \frac{\text{favorable outcomes}}{\text{total outcomes}}$):
-
-* **Fundamental Counting Principle:** If event 1 can happen in $m$ ways and event 2 in $n$ ways, both together can happen in $m \times n$ ways.
-* **Factorial ($n!$):** The product of all positive integers less than or equal to $n$ *(e.g., $4! = 4 \times 3 \times 2 \times 1 = 24$)*.
-* **Permutations ($P(n, r)$):** An arrangement of $r$ objects selected from $n$ distinct objects **where sequence/order matters**.
-  $$P(n, r) = \frac{n!}{(n - r)!}$$
-* **Combinations ($C(n, r)$):** A selection of $r$ objects from $n$ distinct objects **where sequence/order DOES NOT matter**.
-  $$C(n, r) = \binom{n}{r} = \frac{n!}{r!(n - r)!}$$
-
-</details>
-
----
-
-## 📊 5. Random Variables & Common Distributions
-
-<details>
-<summary>👁️ <b>Click to reveal Random Variables & Distribution Descriptions</b></summary>
-
-<br>
-
-### 🔹 Core Concepts
-* **Random Variable ($X$):** A variable whose numeric value is determined by the outcome of a random phenomenon.
-* **Expected Value ($E[X]$ or $\mu$):** The long-run average or mean value of a random variable across infinite repeated trials.
-* **Probability Mass Function (PMF):** A function that gives the exact probability that a *discrete* random variable equals a specific value $x$.
-* **Probability Density Function (PDF):** A function that describes the relative likelihood for a *continuous* random variable to fall within a specific range of values.
-
----
-
-### 🔹 Discrete Distributions (Countable Outcomes)
-
-1. **Binomial Distribution ($X \sim \text{Binom}(n, p)$):**
-   * *Description:* Models the number of successes in $n$ independent trials, where each trial has a constant success probability $p$.
-   * *Formula:* $P(X = k) = \binom{n}{k} p^k (1 - p)^{n-k}$
-   * *Mean:* $E[X] = np$
-
-2. **Poisson Distribution ($X \sim \text{Poisson}(\lambda)$):**
-   * *Description:* Models the count of rare events occurring within a fixed interval of time or space at a constant average rate $\lambda$.
-   * *Formula:* $P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}$
-   * *Mean & Variance:* $E[X] = Var(X) = \lambda$
-
----
-
-### 🔸 Continuous Distributions (Uncountable Outcomes)
-
-1. **Uniform Distribution ($X \sim U(a, b)$):**
-   * *Description:* Models continuous outcomes where every interval of equal length between minimum $a$ and maximum $b$ is equally likely.
-   * *Density:* $f(x) = \frac{1}{b - a}$
-
-2. **Normal (Gaussian) Distribution ($X \sim N(\mu, \sigma^2)$):**
-   * *Description:* The classic symmetric, bell-shaped distribution centered around mean $\mu$ with standard deviation $\sigma$.
-   * *Standard Normal ($Z$):* A normal distribution standardized to have $\mu = 0$ and $\sigma = 1$ using $Z = \frac{X - \mu}{\sigma}$.
-
-</details>
-
-## 🧠 6. Deep Dive: Bayes' Theorem & Conditional Reasoning
+## 🧠 4. Deep Dive: Bayes' Theorem & Conditional Reasoning
 
 Bayes' Theorem provides a mathematical framework for updating our belief in a hypothesis ($H$) as we collect new evidence ($E$).
-
----
-
-### 📌 Key Terms & Terminology
 
 * **Hypothesis ($H$):** The underlying condition or state of nature you are testing *(e.g., Patient has a disease, Email is spam)*.
 * **Evidence ($E$):** The observed data or diagnostic test result *(e.g., Positive lab test, Email contains the word "FREE")*.
@@ -162,7 +84,7 @@ Bayes' Theorem provides a mathematical framework for updating our belief in a hy
 ---
 
 <details>
-<summary>👁️ <b>Click to reveal Bayes' Theorem Formulas & Step-by-Step Breakdown</b></summary>
+<summary>👁️ <b>Click to reveal Bayes' Theorem Formulas, Problem Example & Naive Bayes</b></summary>
 
 <br>
 
@@ -207,5 +129,68 @@ $$P(y \mid X_1, \dots, X_n) \propto P(y) \prod_{i=1}^{n} P(X_i \mid y)$$
 
 * **Why is it called "Naive"?**
   It naively assumes that all input features ($X_1, X_2, \dots$) are **statistically independent** of each other given the class outcome $y$. While rarely 100% true in real life, this assumption drastically simplifies calculation speeds while producing surprisingly high model accuracy!
+
+</details>
+
+---
+
+## 🎯 5. Counting Principles (Combinatorics)
+
+<details>
+<summary>👁️ <b>Click to reveal Permutations & Combinations Definitions</b></summary>
+
+<br>
+
+Used to count possible outcomes when calculating classical probabilities ($P(A) = \frac{\text{favorable outcomes}}{\text{total outcomes}}$):
+
+* **Fundamental Counting Principle:** If event 1 can happen in $m$ ways and event 2 in $n$ ways, both together can happen in $m \times n$ ways.
+* **Factorial ($n!$):** The product of all positive integers less than or equal to $n$ *(e.g., $4! = 4 \times 3 \times 2 \times 1 = 24$)*.
+* **Permutations ($P(n, r)$):** An arrangement of $r$ objects selected from $n$ distinct objects **where sequence/order matters**.
+  $$P(n, r) = \frac{n!}{(n - r)!}$$
+* **Combinations ($C(n, r)$):** A selection of $r$ objects from $n$ distinct objects **where sequence/order DOES NOT matter**.
+  $$C(n, r) = \binom{n}{r} = \frac{n!}{r!(n - r)!}$$
+
+</details>
+
+---
+
+## 📊 6. Random Variables & Common Distributions
+
+<details>
+<summary>👁️ <b>Click to reveal Random Variables & Distribution Descriptions</b></summary>
+
+<br>
+
+### 🔹 Core Concepts
+* **Random Variable ($X$):** A variable whose numeric value is determined by the outcome of a random phenomenon.
+* **Expected Value ($E[X]$ or $\mu$):** The long-run average or mean value of a random variable across infinite repeated trials.
+* **Probability Mass Function (PMF):** A function that gives the exact probability that a *discrete* random variable equals a specific value $x$.
+* **Probability Density Function (PDF):** A function that describes the relative likelihood for a *continuous* random variable to fall within a specific range of values.
+
+---
+
+### 🔹 Discrete Distributions (Countable Outcomes)
+
+1. **Binomial Distribution ($X \sim \text{Binom}(n, p)$):**
+   * *Description:* Models the number of successes in $n$ independent trials, where each trial has a constant success probability $p$.
+   * *Formula:* $P(X = k) = \binom{n}{k} p^k (1 - p)^{n-k}$
+   * *Mean:* $E[X] = np$
+
+2. **Poisson Distribution ($X \sim \text{Poisson}(\lambda)$):**
+   * *Description:* Models the count of rare events occurring within a fixed interval of time or space at a constant average rate $\lambda$.
+   * *Formula:* $P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}$
+   * *Mean & Variance:* $E[X] = Var(X) = \lambda$
+
+---
+
+### 🔸 Continuous Distributions (Uncountable Outcomes)
+
+1. **Uniform Distribution ($X \sim U(a, b)$):**
+   * *Description:* Models continuous outcomes where every interval of equal length between minimum $a$ and maximum $b$ is equally likely.
+   * *Density:* $f(x) = \frac{1}{b - a}$
+
+2. **Normal (Gaussian) Distribution ($X \sim N(\mu, \sigma^2)$):**
+   * *Description:* The classic symmetric, bell-shaped distribution centered around mean $\mu$ with standard deviation $\sigma$.
+   * *Standard Normal ($Z$):* A normal distribution standardized to have $\mu = 0$ and $\sigma = 1$ using $Z = \frac{X - \mu}{\sigma}$.
 
 </details>
