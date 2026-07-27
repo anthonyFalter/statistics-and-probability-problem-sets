@@ -1,195 +1,160 @@
-# 📊 Comprehensive Statistics & Probability Reference Guide
+# 🎲 Introduction to Probability Reference Guide
 
-A fundamental master cheat sheet combining Descriptive Statistics, Fundamental Probability, Bayesian Reasoning, Counting Principles, and Theoretical Distributions.
-
----
-
-## 📈 1. Descriptive Statistics
-
-Descriptive statistics summarize and organize characteristics of a dataset.
-
-### 🔹 A. Measures of Central Tendency
-Central tendency describes the center or "typical value" of a dataset.
-
-* **Mean ($\mu$ or $\bar{x}$):** The arithmetic average of all values. Highly sensitive to extreme outliers.
-  * **Population Mean:** $\mu = \frac{\sum X}{N}$
-  * **Sample Mean:** $\bar{x} = \frac{\sum x}{n}$
-* **Median ($\tilde{x}$):** The middlemost value when data is sorted in ascending order. **Robust to outliers.**
-  * *Odd $n$:* Middle value at position $\frac{n+1}{2}$.
-  * *Even $n$:* Average of two middle values at positions $\frac{n}{2}$ and $\frac{n}{2} + 1$.
-* **Mode:** The most frequently occurring value(s) in a dataset. 
-  * *Unimodal:* 1 mode | *Bimodal:* 2 modes | *Multimodal:* >2 modes | *No Mode:* All values occur equally.
+A fundamental cheat sheet covering core probability principles, key terms, set operations, rules of probability, Bayesian reasoning, and theoretical distributions.
 
 ---
 
-### 🔹 B. Measures of Dispersion (Spread)
-Dispersion describes how spread out or varied data values are relative to the center.
+## 📌 1. Core Terminology & Definitions
 
-* **Range:** The total distance between maximum and minimum values ($X_{\text{max}} - X_{\text{min}}$).
-* **Variance ($\sigma^2$ or $s^2$):** Average squared deviation from the mean.
-  * **Population Variance:** $\sigma^2 = \frac{\sum (X_i - \mu)^2}{N}$
-  * **Sample Variance:** $s^2 = \frac{\sum (x_i - \bar{x})^2}{n - 1} \quad \text{(Bessel's correction)}$
-* **Standard Deviation ($\sigma$ or $s$):** Square root of variance; expressed in original physical units.
-  * **Population SD:** $\sigma = \sqrt{\sigma^2}$
-  * **Sample SD:** $s = \sqrt{s^2}$
+* **Experiment:** Any repeatable process, action, or trial that yields an uncertain outcome *(e.g., tossing a coin, measuring delivery time)*.
+* **Outcome:** A single, specific result obtained from performing a random experiment *(e.g., getting a "Heads")*.
+* **Sample Space ($S$ or $\Omega$):** The complete set containing all possible outcomes of an experiment *(e.g., $S = \{1, 2, 3, 4, 5, 6\}$ for a 6-sided die)*.
+* **Event ($A, B$):** A specific outcome or collection of outcomes from the sample space that you are interested in measuring *(e.g., rolling an even number)*.
+* **Probability ($P(A)$):** A numerical value constrained between $0$ and $1$ representing the likelihood or chance that event $A$ will occur.
+* **Equally Likely Outcomes:** A condition where every outcome in the sample space has the exact same chance of occurring *(e.g., a fair coin or die)*.
 
 ---
 
-### 🔹 C. Measures of Position
-Position metrics identify where a specific data point falls relative to the entire dataset.
+## 📐 2. The Three Axioms of Probability (Kolmogorov)
 
-* **Percentiles ($P_k$):** Values dividing sorted data into 100 equal parts ($P_{50} = \text{Median}$).
-* **Quartiles ($Q_1, Q_2, Q_3$):** Values dividing sorted data into 4 equal quarters ($25\%$ each).
-  * **$Q_1$ (Lower Quartile):** 25th percentile ($P_{25}$).
-  * **$Q_2$ (Second Quartile):** 50th percentile ($P_{50}$) = **Median**.
-  * **$Q_3$ (Upper Quartile):** 75th percentile ($P_{75}$).
-* **$Z$-Score (Standardized Position):** Number of standard deviations a raw score $x$ sits from the mean:
-  $$Z = \frac{x - \mu}{\sigma} \quad \text{or} \quad Z = \frac{x - \bar{x}}{s}$$
-
----
-
-<details>
-<summary>👁️ <b>Click to reveal Descriptive Statistics Breakdown: Skewness, Empirical Rule & Outlier Rules</b></summary>
-
-<br>
-
-#### ⚖️ Central Tendency Selection Matrix
-
-| Metric | Best Used For | Handles Outliers? | Example |
-| :--- | :--- | :---: | :--- |
-| **Mean** | Symmetric / Normal continuous data | ❌ No | Exam test scores, heights |
-| **Median** | Skewed continuous or ordinal data | ✅ Yes | Income levels, house prices |
-| **Mode** | Categorical / Nominal data | ✅ Yes | Popular shirt color, car brands |
-
----
-
-#### 📊 Skewness & Distribution Shape
-* **Symmetrical (Normal):** $\text{Mean} = \text{Median} = \text{Mode}$
-* **Right-Skewed (Positive Skew):** Long right tail $\rightarrow \text{Mode} < \text{Median} < \text{Mean}$
-* **Left-Skewed (Negative Skew):** Long left tail $\rightarrow \text{Mean} < \text{Median} < \text{Mode}$
-
----
-
-#### 🎯 Empirical Rule (68–95–99.7 Rule for Normal Distributions)
-* $\approx \mathbf{68\%}$ of data falls within $\mu \pm 1\sigma$
-* $\approx \mathbf{95\%}$ of data falls within $\mu \pm 2\sigma$
-* $\approx \mathbf{99.7\%}$ of data falls within $\mu \pm 3\sigma$
-
----
-
-#### 📦 $1.5 \times IQR$ Rule for Outlier Detection
-Interquartile Range: $IQR = Q_3 - Q_1$
-* **Lower Fence:** $Q_1 - 1.5 \times IQR$
-* **Upper Fence:** $Q_3 + 1.5 \times IQR$
-*(Any data point outside these fences is a potential outlier).*
-
-</details>
-
----
-
-## 🎲 2. Core Probability Concepts
-
-* **Experiment:** A repeatable process or trial yielding an uncertain outcome.
-* **Outcome:** A single specific result of an experiment.
-* **Sample Space ($S$ or $\Omega$):** The set containing **all** possible outcomes of an experiment.
-* **Event ($A, B$):** A subset of outcomes from the sample space.
-* **Probability ($P(A)$):** Likelihood of event $A$ occurring ($0 \le P(A) \le 1$).
-
----
-
-## 📐 3. The Three Axioms of Probability (Kolmogorov)
+The mathematical rules that govern all valid probability systems:
 
 1. **Non-Negativity:** $P(A) \ge 0$ for every event $A$.
-2. **Normalization:** $P(S) = 1$ (sum of all possible probabilities equals $100\%$).
-3. **Additivity:** For mutually exclusive events $A_1, A_2, \dots$:
+   * *Description:* A probability can never be negative.
+2. **Normalization:** $P(S) = 1$.
+   * *Description:* The combined probability of all possible outcomes in the entire sample space always equals $100\%$ ($1.0$).
+3. **Additivity:** For any mutually exclusive events $A_1, A_2, A_3, \dots$:
    $$P(A_1 \cup A_2 \dots) = \sum P(A_i)$$
+   * *Description:* The probability of any of multiple non-overlapping events occurring is simply the sum of their individual probabilities.
 
 ---
 
-## 🛠️ 4. Fundamental Rules of Probability
+## 🛠️ 3. Fundamental Rules of Probability
 
 <details>
-<summary>👁️ <b>Click to reveal Core Probability Formulas</b></summary>
+<summary>👁️ <b>Click to reveal Core Probability Rules & Key Term Descriptions</b></summary>
 
 <br>
 
-* **Complement Rule:** $P(A') = 1 - P(A)$ *(event $A$ does NOT occur)*.
-* **Addition Rule (Union - "OR"):**
-  $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
-  * *If Mutually Exclusive ($P(A \cap B) = 0$):* $P(A \cup B) = P(A) + P(B)$
-* **Multiplication Rule (Intersection - "AND"):**
-  $$P(A \cap B) = P(A) \cdot P(B \mid A)$$
-  * *If Independent ($P(B \mid A) = P(B)$):* $P(A \cap B) = P(A) \cdot P(B)$
-* **Conditional Probability:**
-  $$P(A \mid B) = \frac{P(A \cap B)}{P(B)} \quad \text{where } P(B) > 0$$
+### 1. Complement Rule
+* **Complement ($A'$ or $A^c$):** The event that $A$ does **not** happen.
+$$P(A') = 1 - P(A)$$
+
+---
+
+### 2. Addition Rule (Union - "OR")
+* **Union ($A \cup B$):** The event that event $A$, event $B$, or **both** occur.
+$$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+
+> **Mutually Exclusive (Disjoint) Events:** Two events that cannot occur at the same time ($P(A \cap B) = 0$).
+> * *Formula:* $P(A \cup B) = P(A) + P(B)$
+
+---
+
+### 3. Multiplication Rule (Intersection - "AND")
+* **Intersection ($A \cap B$):** The event that **both** $A$ and $B$ occur simultaneously.
+$$P(A \cap B) = P(A) \cdot P(B \mid A)$$
+
+> **Independent Events:** Two events where the occurrence of one provides zero information about the likelihood of the other.
+> * *Formula:* $P(A \cap B) = P(A) \cdot P(B)$
+
+---
+
+### 4. Conditional Probability
+* **Conditional Probability ($P(A \mid B)$):** The updated probability of event $A$ occurring, given the known condition that event $B$ has already occurred.
+$$P(A \mid B) = \frac{P(A \cap B)}{P(B)} \quad \text{where } P(B) > 0$$
 
 </details>
 
 ---
 
-## 🧠 5. Deep Dive: Bayes' Theorem & Conditional Reasoning
+## 🧠 4. Deep Dive: Bayes' Theorem & Conditional Reasoning
 
-Bayes' Theorem provides a framework for updating our belief in a hypothesis ($H$) based on new evidence ($E$).
+Bayes' Theorem provides a mathematical framework for updating our belief in a hypothesis ($H$) as we collect new evidence ($E$).
 
-* **Hypothesis ($H$):** Underlying condition being tested *(e.g., Patient is sick)*.
-* **Evidence ($E$):** Observed test data *(e.g., Positive test result)*.
-* **Prior $P(H)$:** Initial probability before observing evidence.
-* **Posterior $P(H \mid E)$):** Updated probability after observing evidence.
-* **Likelihood $P(E \mid H)$:** Chance of seeing evidence given hypothesis is true.
-* **False Positive Rate:** Test returns positive when hypothesis is false ($P(E \mid H')$).
+* **Hypothesis ($H$):** The underlying condition or state of nature you are testing *(e.g., Patient has a disease, Email is spam)*.
+* **Evidence ($E$):** The observed data or diagnostic test result *(e.g., Positive lab test, Email contains the word "FREE")*.
+* **Prior Probability ($P(H)$):** The initial probability of the hypothesis **before** seeing new evidence *(e.g., Disease prevalence in the general population)*.
+* **Posterior Probability ($P(H \mid E)$):** The updated probability of the hypothesis **after** observing evidence $E$.
+* **Likelihood ($P(E \mid H)$):** The probability that the evidence would occur given that the hypothesis is true.
+* **Marginal / Total Likelihood ($P(E)$):** The overall probability of observing the evidence across all possible hypotheses.
+* **False Positive Rate (Type I Error):** Probability of the test returning positive when the hypothesis is actually false ($P(E \mid H')$).
+* **False Negative Rate (Type II Error):** Probability of the test returning negative when the hypothesis is actually true ($P(E' \mid H)$).
 
 ---
 
 <details>
-<summary>👁️ <b>Click to reveal Master Bayes Formula, Worked Example & Naive Bayes</b></summary>
+<summary>👁️ <b>Click to reveal Bayes' Theorem Formulas, Problem Example & Naive Bayes</b></summary>
 
 <br>
 
-### 🧮 Master Bayes' Theorem Formula
+### 🧮 1. Master Bayes' Theorem Formula
 
-$$P(H \mid E) = \frac{P(E \mid H) \cdot P(H)}{P(E \mid H) \cdot P(H) + P(E \mid H') \cdot P(H')}$$
+$$P(H \mid E) = \frac{P(E \mid H) \cdot P(H)}{P(E)}$$
+
+Where the denominator $P(E)$ is expanded using the **Law of Total Probability**:
+
+$$P(E) = P(E \mid H) \cdot P(H) + P(E \mid H') \cdot P(H')$$
+
+* **Complete Expanded Formula:**
+  $$P(H \mid E) = \frac{P(E \mid H) \cdot P(H)}{P(E \mid H) \cdot P(H) + P(E \mid H') \cdot P(H')}$$
 
 ---
 
-### 📝 Worked Example: Rare Disease Test
+### 📝 2. Classic Problem Example: Medical Diagnostic Testing
 
-> **Scenario:** Disease affects **$1\%$** of population ($P(\text{Sick}) = 0.01$). Test is **$95\%$ accurate** ($P(\text{Pos} \mid \text{Sick}) = 0.95$) with a **$5\%$ false positive rate** ($P(\text{Pos} \mid \text{Healthy}) = 0.05$).
+> **Scenario:** A rare disease affects **$1\%$** of the population. A test for the disease is **$95\%$ accurate** for true positives ($P(\text{Pos} \mid \text{Sick}) = 0.95$) and has a **$5\%$ false positive rate** ($P(\text{Pos} \mid \text{Healthy}) = 0.05$). If a patient tests positive, what is the probability they actually have the disease?
 
-1. **Calculate Total Positive Rate $P(\text{Pos})$:**
+1. **Identify the Given Values:**
+   * **Prior $P(\text{Sick})$:** $0.01$
+   * **Prior $P(\text{Healthy})$:** $1 - 0.01 = 0.99$
+   * **Likelihood $P(\text{Pos} \mid \text{Sick})$:** $0.95$
+   * **False Positive $P(\text{Pos} \mid \text{Healthy})$:** $0.05$
+
+2. **Calculate Total Likelihood of Testing Positive $P(\text{Pos})$:**
    $$P(\text{Pos}) = (0.95 \times 0.01) + (0.05 \times 0.99) = 0.0095 + 0.0495 = 0.0590$$
 
-2. **Calculate Posterior Probability $P(\text{Sick} \mid \text{Pos})$:**
+3. **Calculate Posterior Probability $P(\text{Sick} \mid \text{Pos})$:**
    $$P(\text{Sick} \mid \text{Pos}) = \frac{0.0095}{0.0590} \approx 0.1610 \quad (16.1\%)$$
+
+* **Insight:** Even with a $95\%$ accurate test, the chance of actually having the disease after one positive test is only $16.1\%$ because the disease itself is extremely rare (base rate fallacy)!
 
 ---
 
-### 🤖 Machine Learning: Naive Bayes Classifier
-Calculates class probability assuming all features ($X_1, X_2, \dots$) are conditionally independent:
+### 🤖 3. Machine Learning Application: Naive Bayes Classifier
+
+In Data Science, the **Naive Bayes algorithm** uses Bayes' Theorem to classify multi-feature data ($X_1, X_2, \dots, X_n$) into classes ($y$):
 
 $$P(y \mid X_1, \dots, X_n) \propto P(y) \prod_{i=1}^{n} P(X_i \mid y)$$
 
+* **Why is it called "Naive"?**
+  It naively assumes that all input features ($X_1, X_2, \dots$) are **statistically independent** of each other given the class outcome $y$. While rarely 100% true in real life, this assumption drastically simplifies calculation speeds while producing surprisingly high model accuracy!
+
 </details>
 
 ---
 
-## 🎯 6. Counting Principles (Combinatorics)
+## 🎯 5. Counting Principles (Combinatorics)
 
 <details>
-<summary>👁️ <b>Click to reveal Permutations & Combinations Formulas</b></summary>
+<summary>👁️ <b>Click to reveal Permutations & Combinations Definitions</b></summary>
 
 <br>
 
-* **Fundamental Counting Principle:** If task 1 has $m$ ways and task 2 has $n$ ways, combined they have $m \times n$ ways.
-* **Permutations ($P(n, r)$):** Selecting $r$ items from $n$ **where order matters**.
+Used to count possible outcomes when calculating classical probabilities ($P(A) = \frac{\text{favorable outcomes}}{\text{total outcomes}}$):
+
+* **Fundamental Counting Principle:** If event 1 can happen in $m$ ways and event 2 in $n$ ways, both together can happen in $m \times n$ ways.
+* **Factorial ($n!$):** The product of all positive integers less than or equal to $n$ *(e.g., $4! = 4 \times 3 \times 2 \times 1 = 24$)*.
+* **Permutations ($P(n, r)$):** An arrangement of $r$ objects selected from $n$ distinct objects **where sequence/order matters**.
   $$P(n, r) = \frac{n!}{(n - r)!}$$
-* **Combinations ($C(n, r)$):** Selecting $r$ items from $n$ **where order DOES NOT matter**.
+* **Combinations ($C(n, r)$):** A selection of $r$ objects from $n$ distinct objects **where sequence/order DOES NOT matter**.
   $$C(n, r) = \binom{n}{r} = \frac{n!}{r!(n - r)!}$$
 
 </details>
 
 ---
 
-## 📊 7. Random Variables & Common Distributions
+## 📊 6. Random Variables & Common Distributions
 
 <details>
 <summary>👁️ <b>Click to reveal Random Variables & Distribution Descriptions</b></summary>
@@ -197,34 +162,35 @@ $$P(y \mid X_1, \dots, X_n) \propto P(y) \prod_{i=1}^{n} P(X_i \mid y)$$
 <br>
 
 ### 🔹 Core Concepts
-* **Expected Value ($E[X]$ or $\mu$):** Long-run average value across infinite trials ($E[X] = \sum x \cdot P(x)$).
-* **Probability Mass Function (PMF):** Exact probability for discrete outcomes $P(X = x)$.
-* **Probability Density Function (PDF):** Relative likelihood density for continuous outcomes.
+* **Random Variable ($X$):** A variable whose numeric value is determined by the outcome of a random phenomenon.
+* **Expected Value ($E[X]$ or $\mu$):** The long-run average or mean value of a random variable across infinite repeated trials.
+* **Probability Mass Function (PMF):** A function that gives the exact probability that a *discrete* random variable equals a specific value $x$.
+* **Probability Density Function (PDF):** A function that describes the relative likelihood for a *continuous* random variable to fall within a specific range of values.
 
 ---
 
-### 🔹 Discrete Distributions
+### 🔹 Discrete Distributions (Countable Outcomes)
 
 1. **Binomial Distribution ($X \sim \text{Binom}(n, p)$):**
-   * Successes in $n$ independent trials with constant probability $p$.
+   * *Description:* Models the number of successes in $n$ independent trials, where each trial has a constant success probability $p$.
    * *Formula:* $P(X = k) = \binom{n}{k} p^k (1 - p)^{n-k}$
    * *Mean:* $E[X] = np$
 
 2. **Poisson Distribution ($X \sim \text{Poisson}(\lambda)$):**
-   * Count of rare events occurring in a fixed interval at constant rate $\lambda$.
+   * *Description:* Models the count of rare events occurring within a fixed interval of time or space at a constant average rate $\lambda$.
    * *Formula:* $P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}$
    * *Mean & Variance:* $E[X] = Var(X) = \lambda$
 
 ---
 
-### 🔸 Continuous Distributions
+### 🔸 Continuous Distributions (Uncountable Outcomes)
 
 1. **Uniform Distribution ($X \sim U(a, b)$):**
-   * All equal-length intervals between minimum $a$ and maximum $b$ are equally likely.
+   * *Description:* Models continuous outcomes where every interval of equal length between minimum $a$ and maximum $b$ is equally likely.
    * *Density:* $f(x) = \frac{1}{b - a}$
 
 2. **Normal (Gaussian) Distribution ($X \sim N(\mu, \sigma^2)$):**
-   * Symmetric, bell-shaped distribution defined by mean $\mu$ and standard deviation $\sigma$.
-   * *Standard Normal Conversion:* $Z = \frac{X - \mu}{\sigma}$
+   * *Description:* The classic symmetric, bell-shaped distribution centered around mean $\mu$ with standard deviation $\sigma$.
+   * *Standard Normal ($Z$):* A normal distribution standardized to have $\mu = 0$ and $\sigma = 1$ using $Z = \frac{X - \mu}{\sigma}$.
 
 </details>
