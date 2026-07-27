@@ -1,4 +1,4 @@
-# Problem 5: Customer Churn Rate Reduction (Two-Sample Z-Test for Proportions, Left-Tailed)
+# Problem: Customer Churn Rate Reduction (Two-Sample Z-Test for Proportions, Left-Tailed)
 
 ## 📌 Problem Overview
 
