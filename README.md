@@ -57,6 +57,20 @@ Each problem set includes:
 
 Browse through to find similar problems or see how to tackle different types of questions. The cheat sheets are handy for quick lookups on formulas or concepts.
 
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to fork this repository and submit your changes.
+
+### How to Contribute
+
+1. **Fork the Repository**  
+   Click the **Fork** button at the top right corner of this page to create your own copy of the project.
+
+2. **Clone your Fork**  
+   Clone your forked repository to your local machine:
+   ```bash
+   git clone [https://github.com/YOUR-USERNAME/YOUR-REPOSITORY-NAME.git](https://github.com/YOUR-USERNAME/YOUR-REPOSITORY-NAME.git)
+
 ---
 
 Made for learning, feel free to use these as reference material!
