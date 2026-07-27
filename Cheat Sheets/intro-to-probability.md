@@ -141,3 +141,71 @@ Used to count possible outcomes when calculating classical probabilities ($P(A) 
    * *Standard Normal ($Z$):* A normal distribution standardized to have $\mu = 0$ and $\sigma = 1$ using $Z = \frac{X - \mu}{\sigma}$.
 
 </details>
+
+## 🧠 6. Deep Dive: Bayes' Theorem & Conditional Reasoning
+
+Bayes' Theorem provides a mathematical framework for updating our belief in a hypothesis ($H$) as we collect new evidence ($E$).
+
+---
+
+### 📌 Key Terms & Terminology
+
+* **Hypothesis ($H$):** The underlying condition or state of nature you are testing *(e.g., Patient has a disease, Email is spam)*.
+* **Evidence ($E$):** The observed data or diagnostic test result *(e.g., Positive lab test, Email contains the word "FREE")*.
+* **Prior Probability ($P(H)$):** The initial probability of the hypothesis **before** seeing new evidence *(e.g., Disease prevalence in the general population)*.
+* **Posterior Probability ($P(H \mid E)$):** The updated probability of the hypothesis **after** observing evidence $E$.
+* **Likelihood ($P(E \mid H)$):** The probability that the evidence would occur given that the hypothesis is true.
+* **Marginal / Total Likelihood ($P(E)$):** The overall probability of observing the evidence across all possible hypotheses.
+* **False Positive Rate (Type I Error):** Probability of the test returning positive when the hypothesis is actually false ($P(E \mid H')$).
+* **False Negative Rate (Type II Error):** Probability of the test returning negative when the hypothesis is actually true ($P(E' \mid H)$).
+
+---
+
+<details>
+<summary>👁️ <b>Click to reveal Bayes' Theorem Formulas & Step-by-Step Breakdown</b></summary>
+
+<br>
+
+### 🧮 1. Master Bayes' Theorem Formula
+
+$$P(H \mid E) = \frac{P(E \mid H) \cdot P(H)}{P(E)}$$
+
+Where the denominator $P(E)$ is expanded using the **Law of Total Probability**:
+
+$$P(E) = P(E \mid H) \cdot P(H) + P(E \mid H') \cdot P(H')$$
+
+* **Complete Expanded Formula:**
+  $$P(H \mid E) = \frac{P(E \mid H) \cdot P(H)}{P(E \mid H) \cdot P(H) + P(E \mid H') \cdot P(H')}$$
+
+---
+
+### 📝 2. Classic Problem Example: Medical Diagnostic Testing
+
+> **Scenario:** A rare disease affects **$1\%$** of the population. A test for the disease is **$95\%$ accurate** for true positives ($P(\text{Pos} \mid \text{Sick}) = 0.95$) and has a **$5\%$ false positive rate** ($P(\text{Pos} \mid \text{Healthy}) = 0.05$). If a patient tests positive, what is the probability they actually have the disease?
+
+1. **Identify the Given Values:**
+   * **Prior $P(\text{Sick})$:** $0.01$
+   * **Prior $P(\text{Healthy})$:** $1 - 0.01 = 0.99$
+   * **Likelihood $P(\text{Pos} \mid \text{Sick})$:** $0.95$
+   * **False Positive $P(\text{Pos} \mid \text{Healthy})$:** $0.05$
+
+2. **Calculate Total Likelihood of Testing Positive $P(\text{Pos})$:**
+   $$P(\text{Pos}) = (0.95 \times 0.01) + (0.05 \times 0.99) = 0.0095 + 0.0495 = 0.0590$$
+
+3. **Calculate Posterior Probability $P(\text{Sick} \mid \text{Pos})$:**
+   $$P(\text{Sick} \mid \text{Pos}) = \frac{0.0095}{0.0590} \approx 0.1610 \quad (16.1\%)$$
+
+* **Insight:** Even with a $95\%$ accurate test, the chance of actually having the disease after one positive test is only $16.1\%$ because the disease itself is extremely rare (base rate fallacy)!
+
+---
+
+### 🤖 3. Machine Learning Application: Naive Bayes Classifier
+
+In Data Science, the **Naive Bayes algorithm** uses Bayes' Theorem to classify multi-feature data ($X_1, X_2, \dots, X_n$) into classes ($y$):
+
+$$P(y \mid X_1, \dots, X_n) \propto P(y) \prod_{i=1}^{n} P(X_i \mid y)$$
+
+* **Why is it called "Naive"?**
+  It naively assumes that all input features ($X_1, X_2, \dots$) are **statistically independent** of each other given the class outcome $y$. While rarely 100% true in real life, this assumption drastically simplifies calculation speeds while producing surprisingly high model accuracy!
+
+</details>
