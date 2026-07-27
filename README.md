@@ -1,46 +1,62 @@
 # Statistics & Probability Problem Sets
 
-A collection of statistics and probability problem sets with detailed solutions using relevant mathematical formulas and approaches.
+A personal collection of problem sets showing how I'd solve them using relevant formulas and methods.
 
-## 📚 Contents
+## 📚 What's In Here
 
-This repository contains worked examples and problem-solving approaches for:
-- **Probability Theory** - foundational concepts and applications
-- **Statistics** - descriptive and inferential statistics
-- **Distributions** - normal, binomial, and other probability distributions
-- **Hypothesis Testing** - significance tests and confidence intervals
-- **Regression Analysis** - linear and multivariate models
+This repo has worked examples and solutions across:
+- **Probability Fundamentals** - basic concepts and rules
+- **Distributions** - discrete, continuous, and special cases
+- **Hypothesis Testing** - z-tests, t-tests, and other significance tests  
+- **Descriptive & Inferential Statistics** - analyzing and estimating from data
+- **Sampling & Central Limit Theorem** - understanding sample behavior
+- **Cheat Sheets** - quick reference guides and formula summaries
 
-## 🎯 Purpose
+## 🗂️ Folder Structure
+
+### Cheat Sheets/
+Quick reference materials:
+- `intro-to-probability.md` - probability basics
+- `intro-to-statistics.md` - statistical foundations
+- `intro-to-hypothesis-testing.md` - hypothesis testing overview
+- `statistics-formulas.md` - key formulas
+- `statistics-symbols.md` - common notation and symbols
+
+### Probabilities/
+Probability problem sets organized by topic:
+- **Basic Probability** - fundamental concepts
+- **Bayes Theorem** - conditional probability and Bayes' rule
+- **Combinatorics** - counting and arrangements
+- **Discrete Distribution** - binomial, Poisson, etc.
+- **Continuous Distribution** - normal, exponential, uniform, etc.
+
+### Hypothesis Testing/
+Significance testing examples:
+- **Z-Tests** - testing with known population standard deviation
+- **T-Tests** - testing with sample standard deviation
+
+### Descriptive Statistics/
+Examples of analyzing and summarizing data:
+- `memory-utilization-metrics.md` - descriptive stats applied to system metrics
+
+### Inferential Statistics/
+Estimating population parameters:
+- `server-throughput-estimation.md` - estimating from sample data
+
+### Sampling Distributions/
+Understanding how sample statistics behave:
+- `cloud-api-latency.md` - sampling distribution concepts applied to performance data
+
+## 🎯 How to Use This
 
 Each problem set includes:
-- Problem statement and context
-- Solution approach with relevant formulas
-- Step-by-step calculations
-- Final answer with interpretation
+- The problem statement
+- The approach and relevant formulas
+- Step-by-step work
+- The final answer with some context
 
-## 📖 How to Use
-
-Browse through the problem sets to:
-- Learn statistical concepts through examples
-- Reference solutions for similar problems
-- Study different problem-solving methodologies
-
-## 🛠️ Topics Covered
-
-- Descriptive Statistics
-- Probability Fundamentals
-- Discrete & Continuous Distributions
-- Sampling & Estimation
-- Hypothesis Testing
-- Correlation & Regression
-- ANOVA & Other Advanced Topics
-
-## 📝 Notes
-
-Solutions are worked through using appropriate statistical formulas and methods. Each problem is self-contained with clear explanations of the reasoning and calculations involved.
+Browse through to find similar problems or see how to tackle different types of questions. The cheat sheets are handy for quick lookups on formulas or concepts.
 
 ---
 
-Feel free to explore and use these problem sets as a learning resource!
-
+Made for learning, feel free to use these as reference material!
